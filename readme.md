@@ -1,3 +1,5 @@
+![Banner](images/banner.jpg)
+
 # Kill folders
 
 > When you need to kill a full folder structure by using a FTP client you know that it's slow, really slow and by slow, I mean awfully slow.
