@@ -41,29 +41,29 @@ class Helpers
         return $return;
     }
 
-/**
- * Generic function for adding a js in the HTML response.
- *
- * @param type  $localfile
- * @param type  $weblocation
- * @param mixed $defer
- *
- * @return string
- */
-public static function addJavascript($localfile, $weblocation = '', $defer = false)
-{
-$return='';
+    /**
+     * Generic function for adding a js in the HTML response.
+     *
+     * @param type  $localfile
+     * @param type  $weblocation
+     * @param mixed $defer
+     *
+     * @return string
+     */
+    public static function addJavascript($localfile, $weblocation = '', $defer = false)
+    {
+        $return='';
 
-if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
-$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
-} else {
-if ('' != $weblocation) {
-$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
-}
-}
+        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
+            $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
+        } else {
+            if ('' != $weblocation) {
+                $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
+            }
+        }
 
-return $return;
-}
+        return $return;
+    }
 }
 
 function doIt($folder)
