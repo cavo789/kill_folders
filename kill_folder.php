@@ -116,11 +116,11 @@ $var=(DEBUG === true ? $_GET : $_POST);
 $folder=dirname(__FILE__);
 
 if (isset($var['task'])) {
-    $task=$var['task'];
-    if ('doIt' == $task) {
-        $return = doIt($folder);
-        echo $return;
-        die();
+$task=$var['task'];
+if ('doIt' == $task) {
+$return = doIt($folder);
+echo $return;
+die();
     } elseif ('killMe' == $task) {
         chmod(__FILE__, octdec('644'));
         unlink(__FILE__);
