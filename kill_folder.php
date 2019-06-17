@@ -18,52 +18,52 @@ define('DS', DIRECTORY_SEPARATOR);
  */
 class Helpers
 {
-/**
- * Generic function for adding a js in the HTML response.
- *
- * @param type  $localfile
- * @param type  $weblocation
- * @param mixed $defer
- *
- * @return string
- */
-public static function addJavascript($localfile, $weblocation = '', $defer = false)
-{
-$return='';
+    /**
+     * Generic function for adding a js in the HTML response.
+     *
+     * @param type  $localfile
+     * @param type  $weblocation
+     * @param mixed $defer
+     *
+     * @return string
+     */
+    public static function addJavascript($localfile, $weblocation = '', $defer = false)
+    {
+        $return='';
 
-if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
-$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
-} else {
-if ('' != $weblocation) {
-$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
-}
-}
+        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
+            $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
+        } else {
+            if ('' != $weblocation) {
+                $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
+            }
+        }
 
-return $return;
-}
+        return $return;
+    }
 
-/**
- * Generic function for adding a css in the HTML response.
- *
- * @param type $localfile
- * @param type $weblocation
- *
- * @return string
- */
-public static function addStylesheet($localfile, $weblocation = '')
-{
-$return='';
+    /**
+     * Generic function for adding a css in the HTML response.
+     *
+     * @param type $localfile
+     * @param type $weblocation
+     *
+     * @return string
+     */
+    public static function addStylesheet($localfile, $weblocation = '')
+    {
+        $return='';
 
-if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
-$return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
-} else {
-if ('' != $weblocation) {
-$return='<link href="' . $weblocation . '" rel="stylesheet" />';
-}
-}
+        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
+            $return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
+        } else {
+            if ('' != $weblocation) {
+                $return='<link href="' . $weblocation . '" rel="stylesheet" />';
+            }
+        }
 
-return $return;
-}
+        return $return;
+    }
 }
 
 function doIt($folder)
@@ -73,7 +73,6 @@ function doIt($folder)
 
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
-    $script_name = basename(__FILE__);
 
     $return= '<h3>Suppression de tous les fichiers et sous-dossier de ' . $folder . '</h3>';
 
@@ -117,17 +116,17 @@ $var=(DEBUG === true ? $_GET : $_POST);
 $folder=dirname(__FILE__);
 
 if (isset($var['task'])) {
-    $task=$var['task'];
-    if ('doIt' == $task) {
-        $return = doIt($folder);
-        echo $return;
-        die();
-    } elseif ('killMe' == $task) {
-        chmod(__FILE__, octdec('644'));
-        unlink(__FILE__);
-        echo '<p class="text-success">Le script ' . __FILE__ . ' a &eacute;t&eacute; supprim&eacute; du serveur avec succ&egrave;s</p>';
-        die();
-    }
+$task=$var['task'];
+if ('doIt' == $task) {
+$return = doIt($folder);
+echo $return;
+die();
+} elseif ('killMe' == $task) {
+chmod(__FILE__, octdec('644'));
+unlink(__FILE__);
+echo '<p class="text-success">Le script ' . __FILE__ . ' a &eacute;t&eacute; supprim&eacute; du serveur avec succ&egrave;s</p>';
+die();
+}
 }
 
 ?>
