@@ -9,16 +9,5 @@
       "email": "cavo789@yahoo.com"
     }
   ],
-  "require": {},
-  "require-dev": {
-    "bruli/php-git-hooks": "^5.8"
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "PhpGitHooks\\Infrastructure\\Composer\\ConfiguratorScript::buildConfig"
-    ],
-    "post-update-cmd": [
-      "PhpGitHooks\\Infrastructure\\Composer\\ConfiguratorScript::buildConfig"
-    ]
-  }
+  "require": {}
 }
