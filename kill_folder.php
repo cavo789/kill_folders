@@ -16,54 +16,54 @@ define('DS', DIRECTORY_SEPARATOR);
 /**
  * A few helping functions.
  */
-class aeSecureFct
+class Helpers
 {
-    /**
-     * Generic function for adding a js in the HTML response.
-     *
-     * @param type  $localfile
-     * @param type  $weblocation
-     * @param mixed $defer
-     *
-     * @return string
-     */
-    public static function addJavascript($localfile, $weblocation = '', $defer = false)
-    {
-        $return='';
+/**
+ * Generic function for adding a js in the HTML response.
+ *
+ * @param type  $localfile
+ * @param type  $weblocation
+ * @param mixed $defer
+ *
+ * @return string
+ */
+public static function addJavascript($localfile, $weblocation = '', $defer = false)
+{
+$return='';
 
-        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
-            $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
-        } else {
-            if ('' != $weblocation) {
-                $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
-            }
-        }
+if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
+$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
+} else {
+if ('' != $weblocation) {
+$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
+}
+}
 
-        return $return;
-    }
+return $return;
+}
 
-    /**
-     * Generic function for adding a css in the HTML response.
-     *
-     * @param type $localfile
-     * @param type $weblocation
-     *
-     * @return string
-     */
-    public static function addStylesheet($localfile, $weblocation = '')
-    {
-        $return='';
+/**
+ * Generic function for adding a css in the HTML response.
+ *
+ * @param type $localfile
+ * @param type $weblocation
+ *
+ * @return string
+ */
+public static function addStylesheet($localfile, $weblocation = '')
+{
+$return='';
 
-        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
-            $return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
-        } else {
-            if ('' != $weblocation) {
-                $return='<link href="' . $weblocation . '" rel="stylesheet" />';
-            }
-        }
+if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
+$return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
+} else {
+if ('' != $weblocation) {
+$return='<link href="' . $weblocation . '" rel="stylesheet" />';
+}
+}
 
-        return $return;
-    }
+return $return;
+}
 }
 
 function doIt($folder)
@@ -142,7 +142,7 @@ if (isset($var['task'])) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8;" />
       <?php
-         echo aeSecureFct::addStylesheet('bootstrap.min.css', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
+         echo Helpers::addStylesheet('bootstrap.min.css', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css');
       ?>
       <style type="text/css">
          .ajax_loading {
@@ -171,8 +171,8 @@ if (isset($var['task'])) {
        </div>
 
         <?php
-         echo aeSecureFct::addJavascript('jquery.min.js', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
-         echo aeSecureFct::addJavascript('bootstrap.min.js', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js');
+         echo Helpers::addJavascript('jquery.min.js', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
+         echo Helpers::addJavascript('bootstrap.min.js', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js');
         ?>
 
       <script type="text/javascript" defer="defer">

@@ -1,0 +1,24 @@
+{
+    "name": "avonture_christophe/kill_folders",
+    "description": "Very fast way to remove every files in a folder (subfolders included)",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christophe Avonture",
+            "email": "cavo789@yahoo.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "echo committing as $(git config user.name)",
+                "php-cs-fixer fix ."
+            ],
+            "pre-push": [
+                "php-cs-fixer fix --dry-run ."
+            ],
+            "post-merge": "composer install"
+    }
+}
