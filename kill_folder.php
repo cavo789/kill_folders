@@ -42,28 +42,28 @@ $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/java
 return $return;
 }
 
-    /**
-     * Generic function for adding a css in the HTML response.
-     *
-     * @param type $localfile
-     * @param type $weblocation
-     *
-     * @return string
-     */
-    public static function addStylesheet($localfile, $weblocation = '')
-    {
-        $return='';
+/**
+ * Generic function for adding a css in the HTML response.
+ *
+ * @param type $localfile
+ * @param type $weblocation
+ *
+ * @return string
+ */
+public static function addStylesheet($localfile, $weblocation = '')
+{
+$return='';
 
-        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
-            $return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
-        } else {
-            if ('' != $weblocation) {
-                $return='<link href="' . $weblocation . '" rel="stylesheet" />';
-            }
-        }
+if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
+$return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
+} else {
+if ('' != $weblocation) {
+$return='<link href="' . $weblocation . '" rel="stylesheet" />';
+}
+}
 
-        return $return;
-    }
+return $return;
+}
 }
 
 function doIt($folder)
