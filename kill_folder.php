@@ -52,11 +52,11 @@ class Helpers
      */
     public static function addJavascript($localfile, $weblocation = '', $defer = false)
     {
-        $return='';
+    $return='';
 
-        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
-            $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
-        } else {
+    if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
+        $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
+    } else {
             if ('' != $weblocation) {
                 $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
             }
