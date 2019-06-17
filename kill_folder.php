@@ -40,14 +40,15 @@ class Helpers
 
         return $return;
     }
-    /**
-     * Generic function for adding a js in the HTML response.
-     *
-     * @param type  $localfile
-     * @param type  $weblocation
-     * @param mixed $defer
-     *
-     * @return string
+
+/**
+ * Generic function for adding a js in the HTML response.
+ *
+ * @param type  $localfile
+ * @param type  $weblocation
+ * @param mixed $defer
+ *
+ * @return string
      */
     public static function addJavascript($localfile, $weblocation = '', $defer = false)
     {
