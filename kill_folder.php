@@ -80,7 +80,7 @@ $it = new RecursiveDirectoryIterator($folder);
 
 $wCount=0;
 
-foreach         (new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST) as $file) {
+foreach                 (new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST) as $file) {
 if (($file->isDir()) && (!in_array($file->getFilename(), ['.', '..']))) {
 $return .= '<h4>Suppression du dossier ' . $file->getPathname() . '</h4>';
 @rmdir($file->getPathname());
