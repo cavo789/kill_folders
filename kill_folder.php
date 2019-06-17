@@ -91,7 +91,8 @@ $return .= '<p>Suppression du fichier ' . $file->getPathname() . '</p>';
 @unlink($file->getPathname());
 ++$wCount;
 } else {
-$return .=          '<p class="text-success">Le fichier ' . $file->getPathname() . ' n\'a pas &eacute;t&eacute; supprim&eacute;.</p>';
+    
+    $return .=          '<p class="text-success">Le fichier ' . $file->getPathname() . ' n\'a pas &eacute;t&eacute; supprim&eacute;.</p>';
 }
 }
 }
