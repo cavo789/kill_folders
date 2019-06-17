@@ -18,52 +18,52 @@ define('DS', DIRECTORY_SEPARATOR);
  */
 class Helpers
 {
-    /**
-     * Generic function for adding a js in the HTML response.
-     *
-     * @param type  $localfile
-     * @param type  $weblocation
-     * @param mixed $defer
-     *
-     * @return string
-     */
-    public static function addJavascript($localfile, $weblocation = '', $defer = false)
-    {
-        $return='';
 
-        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
-            $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
-        } else {
-            if ('' != $weblocation) {
-                $return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
-            }
-        }
+/**
+ * Generic function for adding a css in the HTML response.
+ *
+ * @param type $localfile
+ * @param type $weblocation
+ *
+ * @return string
+ */
+public static function addStylesheet($localfile, $weblocation = '')
+{
+$return='';
 
-        return $return;
-    }
+if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
+$return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
+} else {
+if ('' != $weblocation) {
+$return='<link href="' . $weblocation . '" rel="stylesheet" />';
+}
+}
 
-    /**
-     * Generic function for adding a css in the HTML response.
-     *
-     * @param type $localfile
-     * @param type $weblocation
-     *
-     * @return string
-     */
-    public static function addStylesheet($localfile, $weblocation = '')
-    {
-        $return='';
+return $return;
+}
+/**
+ * Generic function for adding a js in the HTML response.
+ *
+ * @param type  $localfile
+ * @param type  $weblocation
+ * @param mixed $defer
+ *
+ * @return string
+ */
+public static function addJavascript($localfile, $weblocation = '', $defer = false)
+{
+$return='';
 
-        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
-            $return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
-        } else {
-            if ('' != $weblocation) {
-                $return='<link href="' . $weblocation . '" rel="stylesheet" />';
-            }
-        }
+if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'js' . DS . $localfile)) {
+$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="../assets/js/' . $localfile . '"></script>';
+} else {
+if ('' != $weblocation) {
+$return='<script ' . (true == $defer ? 'defer="defer" ' : '') . 'type="text/javascript" src="' . $weblocation . '"></script>';
+}
+}
 
-        return $return;
-    }
+return $return;
+}
 }
 
 function doIt($folder)
