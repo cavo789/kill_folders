@@ -3,10 +3,28 @@
 --- Original
 +++ New
 @@ @@
-      */
+ {
+-/**
+- * Generic function for adding a js in the HTML response.
+- *
+- * @param type  $localfile
+- * @param type  $weblocation
+- * @param mixed $defer
+- *
+- * @return string
+- */
 -public static function addJavascript($localfile, $weblocation = '', $defer = false)
 -{
 -$return='';
++    /**
++     * Generic function for adding a js in the HTML response.
++     *
++     * @param type  $localfile
++     * @param type  $weblocation
++     * @param mixed $defer
++     *
++     * @return string
++     */
 +    public static function addJavascript($localfile, $weblocation = '', $defer = false)
 +    {
 +        $return='';
@@ -31,28 +49,48 @@
 +        return $return;
 +    }
  
-     /**
-      * Generic function for adding a css in the HTML response.
-      *
-      * @param type $localfile
-      * @param type $weblocation
-      *
-      * @return string
-      */
-     public static function addStylesheet($localfile, $weblocation = '')
-     {
-         $return='';
+-/**
+- * Generic function for adding a css in the HTML response.
+- *
+- * @param type $localfile
+- * @param type $weblocation
+- *
+- * @return string
+- */
+-public static function addStylesheet($localfile, $weblocation = '')
+-{
+-$return='';
++    /**
++     * Generic function for adding a css in the HTML response.
++     *
++     * @param type $localfile
++     * @param type $weblocation
++     *
++     * @return string
++     */
++    public static function addStylesheet($localfile, $weblocation = '')
++    {
++        $return='';
  
-         if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
-             $return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
-         } else {
-             if ('' != $weblocation) {
-                 $return='<link href="' . $weblocation . '" rel="stylesheet" />';
-             }
-         }
+-if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
+-$return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
+-} else {
+-if ('' != $weblocation) {
+-$return='<link href="' . $weblocation . '" rel="stylesheet" />';
+-}
+-}
++        if (is_file(dirname(__DIR__) . DS . 'assets' . DS . 'css' . DS . $localfile)) {
++            $return='<link href="../assets/css/' . $localfile . '" rel="stylesheet" />';
++        } else {
++            if ('' != $weblocation) {
++                $return='<link href="' . $weblocation . '" rel="stylesheet" />';
++            }
++        }
  
-         return $return;
-     }
+-return $return;
+-}
++        return $return;
++    }
  }
  
  function doIt($folder)
@@ -234,4 +272,4 @@
       ----------- end diff -----------
 
 
-Fixed all files in 0.077 seconds, 12.000 MB memory used
+Fixed all files in 0.075 seconds, 12.000 MB memory used
