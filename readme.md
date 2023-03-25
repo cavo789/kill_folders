@@ -1,5 +1,7 @@
 # Kill folders
 
+![php 8.2](https://img.shields.io/badge/php-8.2-brightgreen?style=flat)
+
 ![Banner](./banner.svg)
 
 > When you need to kill a full folder structure by using a FTP client you know that it's slow, really slow and by slow, I mean awfully slow.
